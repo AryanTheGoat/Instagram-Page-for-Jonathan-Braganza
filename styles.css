@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fafafa;
+  color: #262626;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+.workspace {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px;
+}
+
+.sidebar {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 24px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar-logo {
+  font-family: "Arial Black", "Arial", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #262626;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-item {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: #262626;
+  font-weight: 600;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+}
+
+.profile-view {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-top {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 24px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-ring {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(#f09433, #cc2366, #bc1888, #f09433);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-heading h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.actions-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+}
+
+.follow-btn {
+  background: #0095f6;
+  color: #ffffff;
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: #262626;
+  border: 1px solid #dbdbdb;
+}
+
+.tertiary-btn {
+  background: #ffffff;
+  color: #262626;
+  border: 1px solid #dbdbdb;
+}
+
+.stats-row {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item strong {
+  font-size: 1.1rem;
+}
+
+.stat-item span {
+  color: #8e8e8e;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.profile-bio {
+  line-height: 1.75;
+}
+
+.profile-bio .real-name {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.posts-section {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  color: #262626;
+  padding: 10px 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.tab.active {
+  border-bottom: 2px solid #262626;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.post-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.post-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .sidebar {
+    display: none;
+  }
+
+  .profile-top {
+    padding: 18px;
+  }
+
+  .posts-section {
+    padding: 18px;
+  }
+
+  .post-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
